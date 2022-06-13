@@ -1,8 +1,20 @@
 import Nota from "./components/Nota";
 
-function Lista({ setOverlay, notas, IdEditar, IdEliminar }) {
+function Lista(props) {
+    const {
+        setOverlay,
+        notas,
+        IdEditar,
+        IdEliminar,
+        setTitulo,
+        setDescripcion,
+        setModoEdicion
+    } = props;
     //=============== onclick muestra el overlay ===============
     const handleAgregar = () => {
+        setTitulo("")
+        setDescripcion("")
+        setModoEdicion(false)
         setOverlay(true);
     };
 

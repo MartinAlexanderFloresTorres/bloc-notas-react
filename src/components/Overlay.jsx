@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import formatearFecha from "../helpers/FormatearFecha";
 import GenerarId from "../helpers/GenerarId";
 
@@ -11,11 +11,12 @@ function Overlay(props) {
         modoEdicion,
         setModoEdicion,
         notaEditar,
+        titulo,
+        setTitulo,
+        descripcion,
+        setDescripcion
     } = props;
 
-    //=============== useState ===============
-    const [titulo, setTitulo] = useState("");
-    const [descripcion, setDescripcion] = useState("");
 
     //=============== useEfect editar ===============
     useEffect(() => {

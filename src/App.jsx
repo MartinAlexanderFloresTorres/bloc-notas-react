@@ -17,6 +17,8 @@ function App() {
         fecha: FormatearFecha(new Date()),
     };
     //=============== useState globales ===============
+    const [titulo, setTitulo] = useState("");
+    const [descripcion, setDescripcion] = useState("");
     const [notas, setNotas] = useState([]);
     const [notaEditar, setNotaEditar] = useState({});
     const [overlay, setOverlay] = useState(false);
@@ -65,6 +67,9 @@ function App() {
                     notas={notas}
                     IdEditar={IdEditar}
                     IdEliminar={IdEliminar}
+                    setTitulo={setTitulo}
+                    setDescripcion={setDescripcion}
+                    setModoEdicion={setModoEdicion}
                 />
                 {overlay && (
                     <Overlay
@@ -75,6 +80,10 @@ function App() {
                         modoEdicion={modoEdicion}
                         setModoEdicion={setModoEdicion}
                         notaEditar={notaEditar}
+                        titulo={titulo}
+                        setTitulo={setTitulo}
+                        descripcion={descripcion}
+                        setDescripcion={setDescripcion}
                     />
                 )}
                 {eliminar && (
