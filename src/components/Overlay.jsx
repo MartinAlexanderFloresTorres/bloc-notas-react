@@ -30,6 +30,19 @@ function Overlay(props) {
         e.preventDefault();
 
         //=============== si hay campos vacios ===============
+        if (titulo.trim() == "" || descripcion.trim() == "") {
+            if (titulo !== titulo.trim()) {
+                setTitulo("");
+            }
+            if (descripcion !== descripcion.trim()) {
+                setDescripcion("");
+            }
+            e.target.classList.add("error");
+            setTimeout(() => {
+                e.target.classList.remove("error");
+            }, 2000);
+            return;
+        }
         if ([titulo, descripcion].includes("")) {
             e.target.classList.add("error");
             setTimeout(() => {
